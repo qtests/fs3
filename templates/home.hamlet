@@ -1,0 +1,15 @@
+$# {-# START_FILE templates/home.hamlet #-}
+
+$if null filenames
+    <p>No files have been uploaded yet.
+$else
+    <h2>Previously submitted files
+    <ul>
+        $forall filename <- filenames
+            <li>#{filename}
+
+<h2>Submit new file
+<form method=post action=@{HomeR} enctype=#{formEncType}>
+    ^{formWidget}
+    <input type="submit" value="Upload">
+    
