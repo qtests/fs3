@@ -9,12 +9,14 @@ module Foundation where
 
 import Data.Text
 import Control.Concurrent.STM
+import Data.ByteString.Lazy (ByteString)
 
 import Yesod
 
 -- data App = App
 -- data App = App [Text]
-data App = App (TVar [Text])
+-- data App = App (TVar [Text])
+data App = App (TVar [(Text, ByteString)])
 
 instance Yesod App
 
@@ -28,9 +30,12 @@ getList = do
 --     App state <- getYesod
 --     return state
    App tstate <- getYesod
-   liftIO $ readTVarIO tstate
+   -- liftIO $ readTVarIO tstate
+   state <- liftIO $ readTVarIO tstate
+   return $ fmap fst state
 
-addFile :: App -> Text -> Handler ()
+-- addFile :: App -> Text -> Handler ()
+addFile :: App -> (Text, ByteString) -> Handler ()
 addFile (App tstore) op =
     liftIO . atomically $ do
     modifyTVar tstore $ \ ops -> op : ops

@@ -24,6 +24,10 @@ library
                 ,  data-default
                 ,  text
                 ,  stm 
+                ,  bytestring
+                ,  conduit
+                ,  conduit-extra
+                ,  resourcet
 
 executable fs3
   hs-source-dirs:      src
@@ -38,4 +42,8 @@ executable fs3
                     ,  data-default
                     ,  text
                     ,  stm
+                    ,  bytestring
+                    ,  conduit
+                    ,  conduit-extra
+                    ,  resourcet
                     
