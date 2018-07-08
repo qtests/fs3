@@ -1,5 +1,7 @@
 {-# LANGUAGE OverloadedStrings #-}
 
+-- https://github.com/ShaneKilkelly/YesodExample
+
 module Main where
 
 import Yesod

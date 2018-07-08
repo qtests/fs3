@@ -6,9 +6,12 @@ $else
     <h2>Previously submitted files
     <ul>
         $forall filename <- filenames
-            <li>#{filename}
-
+$#            <li>#{filename}
+            <li>
+                <a href=@{PreviewR filename}>#{filename}
+<br>
 <h2>Submit new file
+<br>
 <form method=post action=@{HomeR} enctype=#{formEncType}>
     ^{formWidget}
     <input type="submit" value="Upload">

@@ -19,6 +19,7 @@ library
   exposed-modules: Foundation
                    Dispatch
                    Handler.Home
+                   Handler.Preview
   build-depends:   base >= 4.7 && < 5
                 ,  yesod
                 ,  data-default
@@ -28,6 +29,8 @@ library
                 ,  conduit
                 ,  conduit-extra
                 ,  resourcet
+                -- ,  blaze-html
+                ,  blaze-markup
 
 executable fs3
   hs-source-dirs:      src
@@ -35,6 +38,7 @@ executable fs3
   other-modules:       Foundation
                        Dispatch
                        Handler.Home
+                       Handler.Preview
   main-is:             Main.hs
   default-language:    Haskell2010
   build-depends:       base >= 4.7 && < 5
@@ -46,4 +50,6 @@ executable fs3
                     ,  conduit
                     ,  conduit-extra
                     ,  resourcet
+                    -- ,  blaze-html
+                    ,  blaze-markup
                     

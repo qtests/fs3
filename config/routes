@@ -1,3 +1,4 @@
 -- {-# START_FILE config/routes #-}
 -- / HomeR GET
 / HomeR GET POST
+/file/#Text PreviewR GET

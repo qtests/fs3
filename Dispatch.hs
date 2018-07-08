@@ -3,6 +3,7 @@
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE TemplateHaskell #-}
 {-# LANGUAGE TypeFamilies #-}
+{-# LANGUAGE ViewPatterns #-}
 
 -- show
 module Dispatch where
@@ -10,8 +11,9 @@ module Dispatch where
 import Data.Default
 import Yesod
 import Yesod.Default.Util
-import Handler.Home
 
+import Handler.Home
+import Handler.Preview
 import Foundation
 
 mkYesodDispatch "App" resourcesApp
