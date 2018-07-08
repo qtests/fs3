@@ -15,6 +15,10 @@ import Control.Concurrent.STM
 import Data.ByteString.Lazy (ByteString)
 import qualified Data.Text as Text
 
+import Data.Default
+import Text.Hamlet
+import Yesod.Default.Util
+
 import Yesod
 
 -- data App = App
@@ -22,7 +26,12 @@ import Yesod
 -- data App = App (TVar [Text])
 data App = App (TVar [(Text, ByteString)])
 
-instance Yesod App
+-- instance Yesod App
+instance Yesod App where
+    defaultLayout widget = do
+        pc <- widgetToPageContent $ $(widgetFileNoReload def "default-layout")
+        withUrlRenderer $(hamletFile "templates/default-layout-wrapper.hamlet")
+
 
 instance RenderMessage App FormMessage where
    renderMessage _ _ = defaultFormMessage

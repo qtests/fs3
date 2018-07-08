@@ -31,6 +31,8 @@ library
                 ,  resourcet
                 -- ,  blaze-html
                 ,  blaze-markup
+                ,  shakespeare 
+                
 
 executable fs3
   hs-source-dirs:      src
@@ -52,4 +54,6 @@ executable fs3
                     ,  resourcet
                     -- ,  blaze-html
                     ,  blaze-markup
+                    ,  shakespeare 
+                    
                     
